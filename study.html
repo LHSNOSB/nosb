@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NOSB Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>NOSB Flashcards</h1>
+
+  <select id="topicSelect" onchange="changeTopic()">
+    <option value="All">All Topics</option>
+    <option value="Marine Policy & Law">Marine Policy & Law</option>
+    <option value="Physical Oceanography">Physical Oceanography</option>
+    <option value="Biological Oceanography">Biological Oceanography</option>
+    <option value="Chemistry & Geochemistry">Chemistry & Geochemistry</option>
+    <option value="Marine Technology & Instrumentation">Marine Technology & Instrumentation</option>
+    <option value="History of Ocean Science">History of Ocean Science</option>
+  </select>
+
+  <!-- Keyboard shortcuts instructions -->
+  <div class="instructions">
+    <strong>Keyboard Shortcuts:</strong>
+    <ul>
+      <li><strong>Space</strong> - Flip card</li>
+      <li><strong>→ Arrow</strong> - Next card</li>
+      <li><strong>← Arrow</strong> - Previous card</li>
+      <li><strong>S</strong> - Shuffle cards</li>
+    </ul>
+  </div>
+
+  <div id="card" onclick="flipCard()">
+    <p id="card-text">Loading...</p>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <p id="progress"></p>
+
+  <button onclick="nextCard()">Next Card</button>
+  <button onclick="prevCard()">Previous Card</button>
+  <button onclick="shuffleCards()">Shuffle</button>
+
+  <script src="flashcards.js"></script>
+</body>
+</html>

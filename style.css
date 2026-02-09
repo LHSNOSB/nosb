@@ -1,0 +1,55 @@
+* { box-sizing: border-box; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+body {
+  margin: 0; min-height: 100vh;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white; display:flex; flex-direction:column; align-items:center;
+}
+h1 { margin-top:30px; font-size:2.6rem; }
+select, button { padding:10px 16px; font-size:1rem; border-radius:8px; border:none; cursor:pointer; }
+select { margin:15px 0; }
+
+/* Main container for card + instructions */
+.main-container { display:flex; justify-content:center; align-items:flex-start; gap:30px; margin-bottom:20px; }
+.card-container { width:380px; max-width:90vw; }
+
+/* Card */
+#card {
+  width:100%; max-width:380px; min-height:220px;
+  background:white; color:#222; border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35); padding:25px;
+  text-align:center; font-size:1.25rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:transform 0.25s ease;
+  border-top:8px solid transparent;
+}
+#card.flipped { transform:scale(0.97); }
+
+/* Topic color accents */
+[data-topic="Marine Policy & Law"] { border-top-color:#1abc9c; }
+[data-topic="Physical Oceanography"] { border-top-color:#3498db; }
+[data-topic="Biological Oceanography"] { border-top-color:#2ecc71; }
+[data-topic="Chemistry & Geochemistry"] { border-top-color:#e67e22; }
+[data-topic="Marine Technology & Instrumentation"] { border-top-color:#9b59b6; }
+[data-topic="History of Ocean Science"] { border-top-color:#f1c40f; }
+
+/* Right/Wrong buttons */
+.answer-buttons { display:none; margin-top:15px; text-align:center; }
+.answer-buttons button { margin:0 6px; padding:8px 14px; font-size:1rem; }
+
+/* Instructions */
+.instructions {
+  background: rgba(255,255,255,0.1); padding:15px 20px;
+  border-radius:10px; max-width:220px; text-align:left; font-size:0.95rem;
+}
+.instructions ul { margin:5px 0 0 20px; padding:0; }
+.instructions li { margin-bottom:4px; }
+
+/* Mobile */
+@media(max-width:720px){ .main-container{ flex-direction:column; align-items:center; } .instructions{ max-width:90%; margin-top:15px; } .card-container{ width:90%; } }
+
+/* Progress bar */
+.progress-bar { width:380px; max-width:90vw; height:10px; background:rgba(255,255,255,0.25); border-radius:6px; overflow:hidden; margin:18px 0 8px; }
+.progress-fill { height:100%; background:#1da1f2; width:0%; transition:width 0.3s ease; }
+#progress { font-size:0.95rem; opacity:0.85; }
+button { margin:10px 6px; background:#1da1f2; color:white; }
+button:hover{ background:#1485cc; }
